@@ -136,8 +136,8 @@ class NexBlocks_Enqueue {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		// MediaElement on single posts with media.
-		if ( is_singular() && wp_attachment_is( 'audio' ) || is_singular() && wp_attachment_is( 'video' ) ) {
+		// MediaElement on attachment pages with audio or video.
+		if ( is_singular() && ( wp_attachment_is( 'audio' ) || wp_attachment_is( 'video' ) ) ) {
 			wp_enqueue_style( 'wp-mediaelement' );
 			wp_enqueue_script( 'wp-mediaelement' );
 		}
