@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexBlocks Theme Documentation</title>
+<style>
+  body{font-family:system-ui,sans-serif;color:#1e293b;line-height:1.7;max-width:900px;margin:0 auto;padding:2rem}
+  h1{color:#0f172a;border-bottom:3px solid #2563eb;padding-bottom:.5rem}
+  h2{color:#1e40af;margin-top:2.5rem}
+  h3{color:#374151;margin-top:1.5rem}
+  code{background:#f1f5f9;padding:.125em .375em;border-radius:4px;font-size:.875em}
+  pre{background:#0f172a;color:#e2e8f0;padding:1.25rem;border-radius:8px;overflow-x:auto}
+  .note{background:#eff6ff;border-left:4px solid #3b82f6;padding:1rem 1.25rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+  ol li,ul li{margin-bottom:.5rem}
+  a{color:#2563eb}
+</style>
+</head>
+<body>
+
+<h1>NexBlocks — Theme Documentation</h1>
+<p>Version 1.0.0 | Author: iNeedMarketer | License: GPL v2+</p>
+
+<div class="note">
+  <strong>Quick Start:</strong> Install the theme, activate it, then go to Appearance &rsaquo; Customize to set your header, footer, colors, and typography.
+</div>
+
+<h2>1. Installation</h2>
+<ol>
+  <li>Download the <code>nexblocks.zip</code> file from ThemeForest.</li>
+  <li>In WordPress admin, go to <strong>Appearance &rsaquo; Themes &rsaquo; Add New &rsaquo; Upload Theme</strong>.</li>
+  <li>Upload the zip file and click <strong>Install Now</strong>.</li>
+  <li>Click <strong>Activate</strong>.</li>
+  <li>Go to <strong>Appearance &rsaquo; Customize</strong> to configure the theme.</li>
+</ol>
+
+<h2>2. Demo Content Import</h2>
+<ol>
+  <li>Install the <strong>WordPress Importer</strong> plugin (Tools &rsaquo; Import &rsaquo; WordPress).</li>
+  <li>Upload <code>demo-content/demo.xml</code>.</li>
+  <li>Import the customizer settings via the <strong>Customizer Export/Import</strong> plugin using <code>demo-content/customizer.dat</code>.</li>
+  <li>Import widgets via <strong>Widget Importer &amp; Exporter</strong> plugin using <code>demo-content/widgets.wie</code>.</li>
+</ol>
+
+<h2>3. Switching Headers</h2>
+<p>Go to <strong>Appearance &rsaquo; Customize &rsaquo; Header &rsaquo; Header Layout</strong>. Select a header style from the image picker. Changes preview live in the customizer.</p>
+
+<h2>4. Switching Footers</h2>
+<p>Go to <strong>Appearance &rsaquo; Customize &rsaquo; Footer &rsaquo; Footer Layout</strong>. Select a footer style and optionally customize the copyright text.</p>
+
+<h2>5. Adding New Headers (Developer)</h2>
+<ol>
+  <li>Create <code>template-parts/headers/header-N.php</code></li>
+  <li>Create <code>assets/css/headers/header-N.css</code></li>
+  <li>Add a thumbnail <code>assets/images/pattern-thumbnails/header-N.jpg</code> (300&times;200px)</li>
+  <li>The header auto-registers — no PHP edits needed.</li>
+</ol>
+
+<h2>6. Adding New Footers (Developer)</h2>
+<p>Same pattern as headers but in the <code>footers/</code> directories.</p>
+
+<h2>7. Customizer Options</h2>
+<ul>
+  <li><strong>General &rsaquo; Layout</strong> — Sidebar position (left/right/none), container width</li>
+  <li><strong>Header</strong> — Header layout, sticky header, transparent header</li>
+  <li><strong>Footer</strong> — Footer layout, copyright text</li>
+  <li><strong>Colors</strong> — Primary, secondary, accent, text, heading, background</li>
+  <li><strong>Typography</strong> — Body font, heading font, base font size</li>
+</ul>
+
+<h2>8. Widget Areas</h2>
+<ul>
+  <li>Blog / Page Sidebar</li>
+  <li>WooCommerce Sidebar</li>
+  <li>Footer Columns 1–4</li>
+  <li>Header Top Bar Left / Right</li>
+  <li>404 Page Widget</li>
+</ul>
+
+<h2>9. WooCommerce</h2>
+<p>NexBlocks automatically detects WooCommerce and loads WooCommerce-specific styles. No additional setup required. Add WooCommerce sidebar widgets via Appearance &rsaquo; Widgets &rsaquo; WooCommerce Sidebar.</p>
+
+<h2>10. Page Templates</h2>
+<p>When editing a page, look for the <strong>Page Attributes &rsaquo; Template</strong> dropdown. Available templates (Phase 4 adds 25+ templates).</p>
+
+<h2>11. Menus</h2>
+<p>Go to Appearance &rsaquo; Menus. Create menus and assign them to locations: Primary, Secondary, Mobile, Footer Columns 1–3, Social Links.</p>
+
+<h2>12. Building from Source</h2>
+<pre>npm install
+npm run dev    # development build with watch
+npm run build  # production minified build
+npm run pot    # regenerate .pot translation file</pre>
+
+<h2>13. Support</h2>
+<p>For support, open a ticket on ThemeForest or visit <a href="https://ineedmarketer.com">ineedmarketer.com</a>.</p>
+
+</body>
+</html>
