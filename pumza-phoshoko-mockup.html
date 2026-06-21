@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pumza Phoshoko — Occupational Therapy & Rehabilitation | Johannesburg</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #0E0E0E;
+    --charcoal:#1A1A1A;
+    --dark:    #242424;
+    --mid:     #3A3A3A;
+    --steel:   #6B6B6B;
+    --silver:  #A8A8A8;
+    --light:   #E8E8E8;
+    --off-white:#F5F5F2;
+    --white:   #FFFFFF;
+    --accent:  #FF6B35;        /* punchy coral */
+    --accent-dim: #FF8F5E;
+    --accent-pale: #FFF0EB;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --radius-pill: 100px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--off-white);
+    color: var(--black);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(14,14,14,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+    color: var(--silver);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.83rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--white); }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    padding: 11px 24px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    background: #e8521e;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(255,107,53,0.4);
+  }
+
+  .btn-large {
+    padding: 17px 40px;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-ghost:hover {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .btn-dark {
+    background: var(--white);
+    color: var(--black);
+  }
+
+  .btn-dark:hover {
+    background: var(--off-white);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 0 40px;
+    min-height: calc(100vh - 68px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-number {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(220px, 30vw, 420px);
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-accent-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .eyebrow-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 24px;
+    line-height: 1.0;
+  }
+
+  .hero h1 .accent { color: var(--accent); }
+
+  .hero h1 .outline {
+    -webkit-text-stroke: 2px var(--white);
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin-bottom: 44px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 28px;
+  }
+
+  .hero-trust span { color: var(--accent); }
+
+  .hero-photo-col {
+    position: relative;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(150deg, #3A3A3A 0%, #242424 30%, #FF6B35 70%, #C94D1E 100%);
+    border-radius: var(--radius-lg) var(--radius-lg) 120px var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-photo::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(14,14,14,0.6));
+  }
+
+  .hero-photo::after {
+    content: 'Professional Photo';
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-photo-tag {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: var(--accent);
+    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  .hero-stat-row {
+    display: flex;
+    gap: 0;
+    margin-top: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding: 18px 16px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 40px; }
+
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--steel);
+    max-width: 520px;
+    line-height: 1.72;
+    margin-bottom: 60px;
+  }
+
+  /* ── WHO I HELP ── */
+  .who-help { background: var(--off-white); }
+
+  .who-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+  }
+
+  .who-header .section-sub { margin-bottom: 0; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--white);
+    padding: 36px 28px;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .card:hover { background: var(--accent); }
+  .card:hover .card-icon-box { background: rgba(255,255,255,0.2); }
+  .card:hover h3, .card:hover p { color: var(--white); }
+  .card:hover .card-num { color: rgba(255,255,255,0.15); }
+
+  .card-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: var(--light);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+    letter-spacing: -0.04em;
+  }
+
+  .card-icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-pale);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+    font-family: 'Syne', sans-serif;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+  }
+
+  .card p {
+    font-size: 0.855rem;
+    color: var(--steel);
+    line-height: 1.65;
+    transition: color 0.2s;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--charcoal); color: var(--white); }
+
+  .about-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .about .section-title { color: var(--white); }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 1/1.15;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #FF6B35 100%);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-photo::after {
+    content: 'Pumza Phoshoko';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .about-photo-accent {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    width: 120px;
+    height: 120px;
+    background: var(--accent);
+    border-radius: var(--radius-lg);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .about-photo-accent strong {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .about-photo-accent span {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 8px;
+  }
+
+  .about-photo-col { position: relative; }
+
+  .about-mantra {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 32px;
+    line-height: 1.3;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .about p {
+    font-size: 0.97rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.82;
+    margin-bottom: 20px;
+  }
+
+  .creds-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cred {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.75);
+    padding: 7px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .cred:hover {
+    background: rgba(255,107,53,0.15);
+    border-color: rgba(255,107,53,0.4);
+    color: var(--accent-dim);
+  }
+
+  .cred.highlight {
+    background: rgba(255,107,53,0.15);
+    border-color: rgba(255,107,53,0.35);
+    color: var(--accent-dim);
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--off-white); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    gap: 40px;
+  }
+
+  .services-header .section-sub { margin-bottom: 0; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .service-row {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .service-row:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-pale);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .service-row:hover .service-icon {
+    background: var(--accent);
+  }
+
+  .service-body h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .service-body p {
+    font-size: 0.86rem;
+    color: var(--steel);
+    line-height: 1.65;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: var(--accent-pale);
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-top: 12px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--black); color: var(--white); overflow: hidden; position: relative; }
+
+  .testimonials::before {
+    content: '"';
+    position: absolute;
+    top: -60px;
+    left: 30px;
+    font-family: 'Syne', sans-serif;
+    font-size: 400px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .testimonials .section-title { color: var(--white); }
+
+  .placeholder-tag {
+    display: inline-block;
+    background: rgba(255,107,53,0.15);
+    border: 1px solid rgba(255,107,53,0.3);
+    color: var(--accent-dim);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 48px;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tcard {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s;
+  }
+
+  .tcard:hover { border-color: rgba(255,107,53,0.3); }
+
+  .tcard:first-child {
+    background: var(--accent);
+    border-color: transparent;
+  }
+
+  .tcard:first-child .tcard-text, .tcard:first-child .author-name { color: var(--white); }
+  .tcard:first-child .author-role { color: rgba(255,255,255,0.65); }
+
+  .stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 20px; }
+  .tcard:first-child .stars { color: rgba(255,255,255,0.7); }
+
+  .tcard-text {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: rgba(255,255,255,0.78);
+    font-style: italic;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .author-row { display: flex; align-items: center; gap: 14px; }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .tcard:first-child .author-avatar { background: rgba(255,255,255,0.25); }
+
+  .author-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    line-height: 1.2;
+  }
+
+  .author-role {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.38);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--off-white); }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .faq-left { position: sticky; top: 100px; }
+
+  .faq-left .section-sub { margin-bottom: 32px; }
+
+  .faq-items { display: flex; flex-direction: column; gap: 4px; }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .faq-q {
+    padding: 22px 24px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    letter-spacing: -0.01em;
+    cursor: default;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+
+  .faq-a {
+    padding: 0 24px 22px;
+    font-size: 0.875rem;
+    color: var(--steel);
+    line-height: 1.72;
+    border-top: 1px solid rgba(0,0,0,0.04);
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--off-white);
+    padding: 0 40px 100px;
+  }
+
+  .cta-box {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--black);
+    border-radius: var(--radius-lg);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: 200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-box::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.08;
+  }
+
+  .cta-text h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .cta-text h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .cta-text p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 500px;
+  }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    min-width: 240px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+  }
+
+  .contact-pill-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 28px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .foot-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .foot-loc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .foot-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .foot-links a {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .foot-links a:hover { color: var(--accent); }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 2px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-col { order: -1; max-width: 380px; margin: 0 auto; }
+    .about-inner { grid-template-columns: 1fr; }
+    .about-photo { aspect-ratio: 3/2; max-width: 540px; }
+    .about-photo-col { max-width: 540px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-box { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 860px) {
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .who-header { grid-template-columns: 1fr; gap: 20px; }
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-left { position: static; }
+    .services-header { flex-direction: column; align-items: flex-start; }
+    nav { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 72px 24px; }
+    .hero { padding: 0 24px; }
+    .header-inner { padding: 0 24px; }
+    .final-cta { padding: 0 24px 72px; }
+    footer { padding: 24px; }
+    .cta-box { padding: 48px 32px; }
+  }
+
+  @media (max-width: 600px) {
+    .cards-grid { grid-template-columns: 1fr; background: none; gap: 12px; }
+    .card { border-radius: var(--radius-md); border: 1px solid var(--light); }
+    section { padding: 60px 20px; }
+    .hero-inner { padding: 60px 0; gap: 48px; }
+    .hero-stat-row { flex-wrap: wrap; }
+    .hero-stat { flex: 1 1 50%; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .foot-links { justify-content: center; }
+    .cta-box { padding: 36px 24px; }
+    .about-photo-accent { display: none; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">PP</div>
+      <div class="logo-text">
+        <span class="logo-name">Pumza Phoshoko</span>
+        <span class="logo-sub">OT &amp; Rehabilitation Specialist · Johannesburg</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn">Book a Free Call</a>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-accent-line"></div>
+  <div class="hero-bg-number">11</div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-text">Now Consulting in Johannesburg &amp; Virtually Across SA</span>
+      </div>
+      <h1>Occupational &amp; Rehabilitation Care in <span class="accent">Johannesburg</span> — <span class="outline">Built Around Your Recovery.</span></h1>
+      <p class="hero-sub">Whether you're recovering from injury, navigating substance abuse, rebuilding after a psychiatric episode, or returning to work — I provide clinically rigorous, outcome-focused support that's designed to last.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-large">Book a Free Consultation</a>
+        <a href="#services" class="btn btn-ghost btn-large">View Services</a>
+      </div>
+      <div class="hero-trust">
+        <span>✦</span> 11+ Years Clinical Experience &nbsp;|&nbsp; <span>✦</span> Life Healthcare Specialist &nbsp;|&nbsp; <span>✦</span> EMBAc Henley Business School
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <div style="position:relative;">
+        <div class="hero-photo"></div>
+        <div class="hero-photo-tag">Rehabilitation Specialist</div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <span class="hero-stat-num">11+</span>
+          <span class="hero-stat-label">Years Experience</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">6+</span>
+          <span class="hero-stat-label">Specialist Years</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">JHB</span>
+          <span class="hero-stat-label">Based &amp; Virtual</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO I HELP ══ -->
+<section class="who-help">
+  <div class="section-inner">
+    <div class="who-header">
+      <div>
+        <div class="section-label">Who I Work With</div>
+        <h2 class="section-title">You're in the right place if you're dealing with…</h2>
+      </div>
+      <p class="section-sub">My practice draws on 11 years of specialist clinical experience across psychiatry, physical rehab, and vocational recovery — so no matter where you are in your journey, I've worked with people like you.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-num">01</div>
+        <div class="card-icon-box">🧠</div>
+        <h3>Psychiatric &amp; Mental Health Recovery</h3>
+        <p>Adults navigating depression, anxiety, bipolar disorder, or post-psychiatric episodes who need structured, occupation-based support to rebuild daily function and confidence.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <div class="card-icon-box">💼</div>
+        <h3>Vocational Rehabilitation &amp; Return to Work</h3>
+        <p>Individuals and employees who've been off work due to injury, illness, or burnout — and need a clear, clinically guided path back to meaningful employment.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <div class="card-icon-box">🔄</div>
+        <h3>Substance Abuse Recovery Support</h3>
+        <p>People in or after substance abuse treatment who need occupational therapy to re-establish routines, roles, and the daily structure that supports sustainable sobriety.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <div class="card-icon-box">🦾</div>
+        <h3>Physical Rehabilitation &amp; Frail Care</h3>
+        <p>Patients recovering from physical injury, surgery, or managing frailty — requiring ADL retraining, adaptive strategies, and functional goal-setting to regain independence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo-col">
+      <div class="about-photo">
+        <div class="about-photo-accent">
+          <strong>11+</strong>
+          <span>Years in Clinical OT</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Pumza</div>
+      <h2 class="section-title" style="color:var(--white); margin-bottom:28px;">Decide. Commit.<br>Focus. <span style="color:var(--accent);">Succeed.</span></h2>
+      <div class="about-mantra">"My mantra isn't just motivational — it's clinical. It's how I approach every client's recovery plan."</div>
+      <p>I'm Pumza Phoshoko, a dedicated Occupational Therapist with over 11 years of experience — more than 6 of those as a specialist at Life Nkanyisa, one of South Africa's leading psychiatric facilities. I currently serve as Rehabilitation Standards Manager at Life Healthcare Group's Head Office, where I shape rehabilitation standards across the group's facilities.</p>
+      <p>My clinical expertise spans Psychiatry, Vocational Rehabilitation, Substance Abuse Recovery, Frail Care, Pediatrics, and Physical Rehabilitation. I also hold an Executive MBA candidacy at Henley Business School Africa — because I believe the best clinicians understand both the human and the system they work within.</p>
+      <p>I'm known for being detail-oriented, articulate, and results-driven — but above all, for genuinely caring about helping individuals achieve meaningful, sustainable outcomes. If you're ready to move forward, I'm ready to support you.</p>
+      <div class="creds-grid">
+        <span class="cred highlight">Senior Occupational Therapist</span>
+        <span class="cred highlight">Rehabilitation Standards Manager</span>
+        <span class="cred">Life Healthcare Group</span>
+        <span class="cred">EMBAc — Henley Business School Africa</span>
+        <span class="cred">Psychiatry Specialist</span>
+        <span class="cred">Vocational Rehabilitation</span>
+        <span class="cred">Substance Abuse Recovery</span>
+        <span class="cred">Life Nkanyisa · 6+ Years</span>
+        <span class="cred">Johannesburg, South Africa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What I Offer</div>
+        <h2 class="section-title">Services</h2>
+      </div>
+      <p class="section-sub">Every service is grounded in evidence-based occupational therapy — tailored to where you are right now and where you want to be.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-row">
+        <div class="service-icon">🧩</div>
+        <div class="service-body">
+          <h3>Occupational Therapy Assessment &amp; Treatment</h3>
+          <p>Comprehensive functional assessments and individualized treatment plans targeting daily living skills, cognitive function, and occupational performance across all life areas.</p>
+          <span class="service-tag">Core OT Service</span>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">💼</div>
+        <div class="service-body">
+          <h3>Vocational Rehabilitation</h3>
+          <p>Structured work hardening programs, capacity evaluations, and return-to-work planning for individuals, employers, and medical case managers seeking clear clinical milestones.</p>
+          <span class="service-tag">Specialist Service</span>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🧠</div>
+        <div class="service-body">
+          <h3>Psychiatric Occupational Therapy</h3>
+          <p>Occupation-based intervention for adults with acute or chronic psychiatric conditions — focused on restoring meaningful roles, routines, and community participation.</p>
+          <span class="service-tag">Psychiatry Specialist</span>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🔄</div>
+        <div class="service-body">
+          <h3>Substance Abuse Recovery Support</h3>
+          <p>Occupational therapy within recovery frameworks — rebuilding daily structure, relapse prevention strategies, and reintegration into productive, meaningful routines post-treatment.</p>
+          <span class="service-tag">Recovery-Focused</span>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🎤</div>
+        <div class="service-body">
+          <h3>Healthcare Consulting &amp; Public Speaking</h3>
+          <p>Organizational consulting, rehabilitation standards advisory, team training, and keynote speaking on rehabilitation, mental health, and healthcare service delivery.</p>
+          <span class="service-tag">Corporate &amp; Orgs</span>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">📋</div>
+        <div class="service-body">
+          <h3>Medical Case Management &amp; Medico-Legal Reporting</h3>
+          <p>Clinical documentation, functional capacity reports, medico-legal evaluations, and coordinated multidisciplinary care planning for insurers, attorneys, and employers.</p>
+          <span class="service-tag">Case Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-label">Client Outcomes</div>
+    <h2 class="section-title" style="color:var(--white); margin-bottom:20px;">What Recovery Looks Like</h2>
+    <div class="placeholder-tag">Placeholder Testimonials — Replace With Real Client Feedback</div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="tcard-text">"After my psychiatric admission, I didn't know how to get back to my life. Pumza didn't just give me exercises — she gave me a plan. Within three months I was back at work, functioning better than before my breakdown. Her approach is clinical but deeply human."</p>
+        </div>
+        <div class="author-row">
+          <div class="author-avatar">N.D.</div>
+          <div>
+            <span class="author-name">N. Dlamini</span>
+            <span class="author-role">Return-to-work client · Johannesburg</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="tcard-text">"Pumza helped our HR team understand vocational rehabilitation in a way we hadn't before. Her consulting shaped how we manage long-term absence and return-to-work across our whole company."</p>
+        </div>
+        <div class="author-row">
+          <div class="author-avatar">T.M.</div>
+          <div>
+            <span class="author-name">T. Mahlangu</span>
+            <span class="author-role">HR Director · Corporate Client</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="tcard-text">"I was six months into recovery from substance abuse and felt completely lost structurally. Pumza built a daily routine with me that made sobriety feel liveable. I'm now 18 months clean and employed full-time."</p>
+        </div>
+        <div class="author-row">
+          <div class="author-avatar">K.S.</div>
+          <div>
+            <span class="author-name">K. Sithole</span>
+            <span class="author-role">Recovery client · Gauteng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <div class="faq-layout">
+      <div class="faq-left">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">Everything you want to know before reaching out</h2>
+        <p class="section-sub">Straight answers to what most people ask before their first session.</p>
+        <a href="#contact" class="btn">Book a Free Consultation</a>
+      </div>
+      <div class="faq-items">
+        <div class="faq-item">
+          <div class="faq-q">Do you work with medical aid / insurance?</div>
+          <div class="faq-a">Yes — I work with most major South African medical aids and can provide documentation for claims. I also offer private-pay options. During your free consultation call we'll confirm your specific cover and discuss a fee structure that works for your situation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does an initial OT assessment involve?</div>
+          <div class="faq-a">The initial assessment typically takes 60–90 minutes and covers your occupational history, functional abilities, mental and physical health status, and your personal goals. From this I develop a tailored treatment plan with clear, measurable outcomes — not open-ended sessions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does vocational rehabilitation take?</div>
+          <div class="faq-a">It depends on the complexity of your case, your diagnosis, and your employer's requirements. Typical programs run 4–12 weeks. I provide milestone-based progress reports throughout so all parties — including insurers and employers — are kept informed and on track.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you offer virtual / telehealth sessions?</div>
+          <div class="faq-a">Yes. Many components of OT consultation, vocational coaching, case management, and healthcare consulting can be delivered effectively via video session. This is especially useful for clients outside Johannesburg or those with limited mobility.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can you provide medico-legal reports or capacity evaluations?</div>
+          <div class="faq-a">Absolutely. I have extensive experience in functional capacity evaluations and medico-legal documentation for attorneys, insurers, and employers. Please contact me directly to discuss your specific reporting requirements and timelines.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<div class="final-cta" id="contact">
+  <div class="cta-box">
+    <div class="cta-text">
+      <h2>Your recovery has<br>a next step. <em>Let's find it.</em></h2>
+      <p>A free 20-minute consultation call is the starting point. No paperwork, no commitment — just a direct conversation about where you are, where you want to be, and whether we're the right fit.</p>
+    </div>
+    <div class="cta-right">
+      <a href="mailto:hello@pumzaphoshoko.co.za" class="btn btn-large" style="text-align:center; margin-bottom:8px;">Book a Free Consultation</a>
+      <div class="contact-pill">
+        <span class="contact-pill-icon">📍</span>
+        Johannesburg Metropolitan Area
+      </div>
+      <div class="contact-pill">
+        <span class="contact-pill-icon">📞</span>
+        +27 00 000 0000
+      </div>
+      <div class="contact-pill">
+        <span class="contact-pill-icon">✉️</span>
+        hello@pumzaphoshoko.co.za
+      </div>
+      <div class="contact-pill">
+        <span class="contact-pill-icon">💻</span>
+        Virtual sessions across South Africa
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="foot-name">Pumza Phoshoko · Occupational Therapy &amp; Rehabilitation</div>
+      <div class="foot-loc" style="margin-top:4px;">Johannesburg, South Africa &nbsp;·&nbsp; © 2025 Pumza Phoshoko. All rights reserved.</div>
+    </div>
+    <div class="foot-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">HPCSA Registered</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
