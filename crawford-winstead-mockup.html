@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crawford Winstead, LCSW — Behavioral Health | Gulf Breeze, FL</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --terracotta: #C4714A;
+    --terracotta-light: #D98B68;
+    --terracotta-pale: #F2E4DA;
+    --sage: #7A9E7E;
+    --sage-light: #A8C5A0;
+    --sage-pale: #EDF3ED;
+    --cream: #FAF6F0;
+    --brown: #6B4F3A;
+    --brown-light: #8C6B52;
+    --text-dark: #2C1F14;
+    --text-mid: #5C4033;
+    --text-light: #8C7B72;
+    --white: #FFFFFF;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 28px;
+    --radius-xl: 48px;
+    --shadow-soft: 0 4px 24px rgba(100, 60, 30, 0.10);
+    --shadow-card: 0 2px 16px rgba(100, 60, 30, 0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.65;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-dark);
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 246, 240, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 113, 74, 0.12);
+    padding: 0 5%;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  .logo-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brown);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .logo-tag {
+    font-size: 0.68rem;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--terracotta); }
+
+  .btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: var(--radius-xl);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(196, 113, 74, 0.35);
+  }
+
+  .btn-large {
+    padding: 15px 36px;
+    font-size: 0.95rem;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--terracotta);
+    color: var(--terracotta);
+  }
+
+  .btn-outline:hover {
+    background: var(--terracotta);
+    color: var(--white);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 5% 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* organic blob backgrounds */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -160px;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(ellipse at center, rgba(168, 197, 160, 0.22) 0%, transparent 70%);
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(196, 113, 74, 0.10) 0%, transparent 70%);
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage-pale);
+    color: var(--sage);
+    border: 1px solid rgba(122, 158, 126, 0.3);
+    padding: 6px 16px;
+    border-radius: var(--radius-xl);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    max-width: 500px;
+    margin-bottom: 36px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-note::before {
+    content: '✓';
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+    background: linear-gradient(145deg, #E8D5C4 0%, #C4A882 35%, #A8836A 65%, #7A9E7E 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .hero-photo::after {
+    content: 'Professional Photo';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 24px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: -20px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-badge-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--sage-pale);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .hero-badge-text {
+    line-height: 1.2;
+  }
+
+  .hero-badge-text strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  .hero-badge-text span {
+    font-size: 0.73rem;
+    color: var(--text-light);
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    padding: 80px 5%;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-light);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 52px;
+  }
+
+  /* ── WHO I HELP ── */
+  .who-help {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    margin: 0 5%;
+    padding: 72px 8%;
+  }
+
+  .who-help .section-inner { max-width: 100%; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    border: 1px solid rgba(196, 113, 74, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--terracotta-pale);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    color: var(--brown);
+  }
+
+  .card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--cream);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-photo-col {
+    position: relative;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #D4C5B0 0%, #B8966E 40%, #7A9E7E 100%);
+    border-radius: 40% 60% 50% 50% / 45% 45% 55% 55%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-photo::after {
+    content: 'Crawford Winstead';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(50,30,15,0.5));
+    color: rgba(255,255,255,0.8);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .credentials-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .cred-badge {
+    background: var(--terracotta-pale);
+    border: 1px solid rgba(196, 113, 74, 0.25);
+    color: var(--brown);
+    padding: 7px 15px;
+    border-radius: var(--radius-xl);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .about-text blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 1.45rem;
+    font-style: italic;
+    color: var(--terracotta);
+    line-height: 1.5;
+    margin-bottom: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--terracotta-light);
+  }
+
+  .about-text p {
+    font-size: 0.97rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(196, 113, 74, 0.15);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    background: linear-gradient(160deg, var(--sage-pale) 0%, var(--cream) 60%);
+    position: relative;
+  }
+
+  .services::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(196, 113, 74, 0.07) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(122, 158, 126, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--terracotta);
+    border-radius: 0 0 2px 2px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--terracotta-pale);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .service-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--brown);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(196, 113, 74, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .testimonials .section-label { color: var(--terracotta-light); }
+  .testimonials .section-title { color: var(--cream); }
+  .testimonials .section-sub { color: rgba(250,246,240,0.6); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+
+  .testimonial {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    position: relative;
+  }
+
+  .testimonial-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    color: var(--terracotta-light);
+    line-height: 0.6;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
+  .testimonial p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(250,246,240,0.85);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--terracotta-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brown);
+  }
+
+  .author-info strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  .author-info span {
+    font-size: 0.75rem;
+    color: rgba(250,246,240,0.45);
+  }
+
+  .placeholder-notice {
+    display: inline-block;
+    background: rgba(196, 113, 74, 0.2);
+    color: var(--terracotta-light);
+    border-radius: var(--radius-sm);
+    padding: 3px 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .stars {
+    color: #F4B942;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--cream);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 900px;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    border: 1px solid rgba(196, 113, 74, 0.1);
+  }
+
+  .faq-item h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .faq-item h4::before {
+    content: 'Q';
+    min-width: 24px;
+    height: 24px;
+    background: var(--terracotta-pale);
+    color: var(--terracotta);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .faq-item p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    padding-left: 34px;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: linear-gradient(135deg, var(--terracotta-pale) 0%, var(--sage-pale) 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(196, 113, 74, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+
+  .final-cta .section-inner {
+    position: relative;
+    max-width: 680px;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(196, 113, 74, 0.2);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    color: rgba(250,246,240,0.5);
+    padding: 32px 5%;
+    text-align: center;
+  }
+
+  footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  footer .foot-logo {
+    font-family: 'Fraunces', serif;
+    color: rgba(250,246,240,0.8);
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  footer a {
+    color: rgba(250,246,240,0.4);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--terracotta-light); }
+
+  .foot-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  /* ── MOBILE ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--brown);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    .about-photo { aspect-ratio: 3/2; border-radius: var(--radius-xl); max-width: 500px; }
+    .about-stats { justify-content: flex-start; }
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-wrap { order: -1; max-width: 340px; margin: 0 auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .who-help { margin: 0 2%; padding: 48px 5%; }
+    nav { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 5%; }
+    .hero { padding: 48px 5% 64px; }
+    .who-help { margin: 0; border-radius: 0; }
+    .hero-badge { left: 0; }
+    footer .footer-inner { flex-direction: column; text-align: center; }
+    .contact-row { flex-direction: column; align-items: center; }
+    .about-stats { flex-wrap: wrap; gap: 20px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-name">Crawford Winstead</span>
+      <span class="logo-tag">Behavioral Health &nbsp;·&nbsp; Gulf Breeze, FL</span>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn">Book a Free Call</a>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Now Accepting New Clients in Gulf Breeze, FL</div>
+      <h1>Behavioral Health Care in Gulf Breeze —<br><em>So You Can Finally Feel Like Yourself Again</em></h1>
+      <p class="hero-sub">You don't have to keep managing on your own. I help adults and professionals navigate anxiety, burnout, crisis, and life transitions with evidence-based, compassionate care — in a way that actually fits your life.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-large">Book a Free Consultation</a>
+        <span class="hero-note">No commitment. Confidential.</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🧠</div>
+        <div class="hero-badge-text">
+          <strong>Behavioral Health Leader</strong>
+          <span>Gulf Breeze &amp; Telehealth · FL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO I HELP ══ -->
+<div class="who-help">
+  <div class="section-inner">
+    <div class="section-label">Who I Work With</div>
+    <h2 class="section-title">You might be in the right place if…</h2>
+    <p class="section-sub">My work is best suited for people ready to move past just coping — and toward genuine, lasting change.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">😰</div>
+        <h3>Anxiety &amp; Chronic Stress</h3>
+        <p>Racing thoughts, constant worry, or a body that never seems to relax — even when nothing is "technically" wrong.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔥</div>
+        <h3>Burnout &amp; Professional Fatigue</h3>
+        <p>High-performing professionals who feel emotionally depleted, disconnected from their work, or questioning everything.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌊</div>
+        <h3>Behavioral &amp; Crisis Support</h3>
+        <p>Individuals and families navigating behavioral health crises, substance use challenges, or acute mental health episodes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Life Transitions</h3>
+        <p>Major changes — career shifts, relationship changes, loss, relocation — that have left you feeling untethered or uncertain.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo-col">
+      <div class="about-photo"></div>
+      <div class="credentials-strip">
+        <span class="cred-badge">Behavioral Health Leader</span>
+        <span class="cred-badge">Crisis Intervention</span>
+        <span class="cred-badge">Gulf Breeze, FL</span>
+        <span class="cred-badge">Telehealth Available</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Crawford</div>
+      <blockquote>"Real change doesn't come from willpower alone. It comes from understanding the patterns beneath your behavior — and having support while you rewrite them."</blockquote>
+      <p>I'm William Crawford Winstead, and I've spent my career at the intersection of behavioral health leadership, direct clinical care, and systems-level thinking. My approach isn't one-size-fits-all — because the people I work with aren't, either.</p>
+      <p>Based in Gulf Breeze, Florida, I work with individuals who are ready to stop just surviving and start building lives with more clarity, capacity, and calm. Whether you're dealing with anxiety, a behavioral health crisis, burnout, or something you can't quite name yet, I bring a grounded, evidence-informed perspective that meets you where you are.</p>
+      <p>My background spans direct clinical work and behavioral health leadership — meaning I understand both the deeply personal side of mental health care and the larger systems that affect access, treatment, and outcomes. That perspective shapes how I think about every client I work with.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Years in Behavioral Health</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Clients Supported</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">FL</span>
+          <span class="stat-label">Licensed &amp; Practicing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Work On Together</div>
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Each service is designed to meet you at the right level of support — from ongoing therapy to crisis stabilization.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Individual Behavioral Health Therapy</h3>
+        <p>One-on-one sessions focused on anxiety, depression, burnout, trauma, and emotional regulation using evidence-based approaches including CBT and motivational interviewing.</p>
+        <span class="service-tag">50-minute sessions</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Crisis Assessment &amp; Stabilization</h3>
+        <p>Immediate, compassionate support for individuals experiencing acute behavioral health crises. Safe, structured, and non-judgmental care when you need it most.</p>
+        <span class="service-tag">Urgent availability</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Substance Use &amp; Behavioral Support</h3>
+        <p>Integrated care for individuals navigating substance use challenges alongside mental health concerns — without shame, and with a focus on lasting recovery.</p>
+        <span class="service-tag">Dual-diagnosis approach</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Professional Burnout Coaching</h3>
+        <p>Targeted support for healthcare workers, leaders, and high-achievers experiencing occupational burnout, compassion fatigue, or workplace stress overload.</p>
+        <span class="service-tag">In-person &amp; telehealth</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Telehealth Therapy (Florida)</h3>
+        <p>Secure, HIPAA-compliant video sessions available to clients anywhere in Florida — same quality of care, on your schedule, from wherever you are most comfortable.</p>
+        <span class="service-tag">All FL residents</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>Consultation &amp; Leadership Support</h3>
+        <p>Organizational and clinical consultation for behavioral health teams, practice leaders, and healthcare organizations seeking to strengthen culture and care delivery.</p>
+        <span class="service-tag">Orgs &amp; teams</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-label">What Clients Say</div>
+    <h2 class="section-title">Stories of change</h2>
+    <div class="placeholder-notice">Placeholder Testimonials — Replace with Real Client Reviews</div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>I'd tried therapy twice before and never felt like the therapist really got it. Crawford actually listened — and more importantly, he asked the right questions. Six months in, I'm sleeping better, less reactive at work, and feel like I have my life back.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S.M.</div>
+          <div class="author-info">
+            <strong>S. M.</strong>
+            <span>Healthcare professional, Gulf Breeze FL</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>When I reached out, I was in crisis and didn't know what my next step was. Crawford responded quickly and helped me get stabilized without judgment. The path forward felt impossible — he helped me find it.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R.T.</div>
+          <div class="author-info">
+            <strong>R. T.</strong>
+            <span>Telehealth client, Pensacola FL</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p>I was skeptical about telehealth therapy but Crawford made it feel completely natural. He has this rare ability to make you feel genuinely seen in a video session. I've recommended him to two colleagues already.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A.K.</div>
+          <div class="author-info">
+            <strong>A. K.</strong>
+            <span>Executive, remote FL client</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Frequently Asked</h2>
+    <p class="section-sub">Answers to what most people wonder before booking their first session.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Do you accept insurance?</h4>
+        <p>I currently work with select insurance panels and also offer private-pay options. During your free consultation call, we'll discuss what fits your situation and explore all available options — including superbill reimbursement for out-of-network coverage.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What does the first session look like?</h4>
+        <p>The first session is an intake and assessment — we talk about what brings you in, your history, your goals, and what kind of support feels right. It's collaborative, not clinical-feeling. There's no pressure and no homework on day one.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How long are sessions and how often do we meet?</h4>
+        <p>Standard individual sessions are 50 minutes. Most clients begin with weekly sessions and taper as they build skills and momentum. Crisis and intensive support may involve more frequent contact in the early weeks.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is everything I share confidential?</h4>
+        <p>Yes — confidentiality is foundational. What you share stays between us, with the standard legal exceptions (imminent risk to self or others, mandated reporting). I'll walk you through the full privacy policy before we begin.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you offer telehealth if I'm not local?</h4>
+        <p>Absolutely. I'm licensed in Florida and offer secure, HIPAA-compliant video sessions to clients across the state. Many of my clients prefer telehealth for the flexibility — and find it just as effective as in-person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Let's Talk</div>
+    <h2>The hardest part is reaching out.<br><em>Let this be that moment.</em></h2>
+    <p>A free 20-minute consultation call is available to anyone considering working together. No commitment, no pressure — just a real conversation to see if it's a good fit.</p>
+    <a href="mailto:hello@crawfordwinstead.com" class="btn btn-large">Book a Free Consultation</a>
+    <div class="contact-row">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        Gulf Breeze, Florida
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        (850) 000-0000
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        hello@crawfordwinstead.com
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💻</div>
+        Telehealth — All of Florida
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="foot-logo">Crawford Winstead · Behavioral Health</div>
+    <p>Gulf Breeze, FL &nbsp;|&nbsp; © 2025 Crawford Winstead. All rights reserved.</p>
+    <div class="foot-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Good Faith Estimate</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
