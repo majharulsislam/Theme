@@ -1,0 +1,135 @@
+/*
+ * NexBlocks – Main Compiled Stylesheet
+ * Source: assets/scss/main.scss (compiled via webpack/sass)
+ *
+ * This file is the build output. Edit the SCSS source files instead.
+ * Kept minimal here since style.css carries the full theme styles.
+ * Additional component overrides go here after build.
+ */
+
+/* Breadcrumb */
+.breadcrumb { margin-bottom: 1.5rem; }
+.breadcrumb__list { display: flex; flex-wrap: wrap; list-style: none; gap: .25rem; align-items: center; font-size: .875rem; }
+.breadcrumb__item a { color: var(--nexblocks-color-text-light); text-decoration: none; }
+.breadcrumb__item a:hover { color: var(--nexblocks-color-primary); }
+.breadcrumb-sep { color: var(--nexblocks-color-border); }
+.breadcrumb__item [aria-current="page"] { color: var(--nexblocks-color-primary); font-weight: 600; }
+
+/* Button outline variant */
+.button--outline {
+	background: transparent;
+	border-color: var(--nexblocks-color-primary);
+	color: var(--nexblocks-color-primary);
+}
+.button--outline:hover { background: var(--nexblocks-color-primary); color: #fff; }
+
+/* Reading time */
+.reading-time { display: inline-flex; align-items: center; gap: .25rem; }
+
+/* Tag links */
+.tag-link {
+	display: inline-block;
+	background: var(--nexblocks-color-bg-alt);
+	border: 1px solid var(--nexblocks-color-border);
+	border-radius: 20px;
+	padding: .125rem .625rem;
+	font-size: .8125rem;
+	text-decoration: none;
+	color: var(--nexblocks-color-text-light);
+	margin: .125rem;
+	transition: background var(--nexblocks-transition), color var(--nexblocks-transition);
+}
+.tag-link:hover { background: var(--nexblocks-color-primary); border-color: var(--nexblocks-color-primary); color: #fff; }
+
+/* Social links */
+.social-links__list { display: flex; list-style: none; gap: .5rem; flex-wrap: wrap; }
+.social-links__list a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: rgba(255,255,255,.1);
+	color: #fff;
+	text-decoration: none;
+	transition: background var(--nexblocks-transition);
+}
+.social-links__list a:hover { background: var(--nexblocks-color-primary); }
+
+/* Sticky header states */
+.site-header.is-sticky {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
+}
+.site-header.is-scrolled { box-shadow: var(--nexblocks-shadow); }
+.site-header.is-hidden { transform: translateY(-100%); }
+
+/* Back to top */
+#back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 50%;
+	background: var(--nexblocks-color-primary);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: opacity .3s, visibility .3s, transform .3s;
+	z-index: 999;
+	box-shadow: var(--nexblocks-shadow);
+}
+#back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+#back-to-top:hover { background: var(--nexblocks-color-secondary); }
+
+/* Search overlay */
+#search-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(15,23,42,.95);
+	z-index: 9998;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s, visibility .3s;
+}
+#search-overlay.is-active { opacity: 1; visibility: visible; }
+#search-overlay .search-form-inner { width: 100%; max-width: 640px; padding: 2rem; }
+#search-overlay input[type="search"] { font-size: 1.5rem; padding: 1rem 1.25rem; border-radius: var(--nexblocks-radius); }
+#search-overlay-close {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 2rem;
+	cursor: pointer;
+	line-height: 1;
+}
+
+/* Post card category */
+.post-card__category { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--nexblocks-color-primary); text-decoration: none; display: inline-block; margin-bottom: .375rem; }
+
+/* Customizer controls CSS */
+.nexblocks-image-radio-item.is-selected { border-color: #2563eb; }
+
+/* WP alignment classes */
+.wp-block-image.alignleft { float: left; margin: 0 2rem 1rem 0; }
+.wp-block-image.alignright { float: right; margin: 0 0 1rem 2rem; }
+.wp-block-image.aligncenter { margin: 1.5rem auto; }
+
+/* Entry tags row */
+.entry-tags { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; margin-bottom: .5rem; }
