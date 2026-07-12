@@ -27,6 +27,7 @@ require_once NEXBLOCKS_DIR . '/inc/class-header-manager.php';
 require_once NEXBLOCKS_DIR . '/inc/class-footer-manager.php';
 require_once NEXBLOCKS_DIR . '/inc/class-template-manager.php';
 require_once NEXBLOCKS_DIR . '/inc/customizer/class-customizer.php';
+require_once NEXBLOCKS_DIR . '/inc/class-pattern-manager.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once NEXBLOCKS_DIR . '/inc/class-woocommerce.php';
