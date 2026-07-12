@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Footer 2 — Minimal Single Row
+   ========================================================================== */
+
+.footer-2 {
+	background: var(--nexblocks-color-heading);
+	color: #94a3b8;
+	padding: 1.5rem 0;
+	border-top: 3px solid var(--nexblocks-color-primary);
+}
+
+.footer-2__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.footer-2__brand .custom-logo { max-height: 36px; width: auto; filter: brightness(0) invert(1); opacity: .8; }
+.footer-2__brand .custom-logo:hover { opacity: 1; }
+
+.footer-2__site-name {
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	letter-spacing: -.01em;
+}
+
+.footer-2 .footer-copyright { font-size: .875rem; color: #64748b; margin: 0; }
+
+.footer-2 .social-links__list a { background: rgba(255,255,255,.1); }
+.footer-2 .social-links__list a:hover { background: var(--nexblocks-color-primary); }
+
+@media (max-width: 600px) {
+	.footer-2__inner { flex-direction: column; text-align: center; }
+}
